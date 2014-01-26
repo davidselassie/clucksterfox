@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/AttackComponent.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/PlatformInputController.js">
     <Files>
-      <File FileName="Assets/Standard Assets/Scripts/LevelController.js" Line="21" Column="8" />
-      <File FileName="Assets/Standard Assets/Scripts/LivingComponent.js" Line="15" Column="1" />
-      <File FileName="Assets/Standard Assets/Scripts/OverheadCamera.js" Line="11" Column="1" />
-      <File FileName="Assets/Standard Assets/Scripts/PlayerComponent.js" Line="2" Column="1" />
-      <File FileName="Assets/Standard Assets/Scripts/SpawningComponent.js" Line="11" Column="12" />
-      <File FileName="Assets/Standard Assets/Scripts/AttackComponent.js" Line="38" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/PlatformInputController.js" Line="20" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/FoxSpriteMovementComponent.js" Line="20" Column="2" />
+      <File FileName="Assets/Standard Assets/Scripts/CharacterMotor.js" Line="67" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

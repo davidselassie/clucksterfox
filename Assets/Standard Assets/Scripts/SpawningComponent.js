@@ -11,7 +11,7 @@ public var heroPrefab : GameObject;
 
 private var spawnedEnemies : int = 0;
 
-static var heroSpawnPoint : Vector3 = new Vector3(0.0f, 2.0f, 0.0f);
+static var heroSpawnPoint : Vector3 = new Vector3(0.0f, 0.0f, 0.0f);
 
 function Start () {
 	SpawnHero();
@@ -36,14 +36,14 @@ public function SpawnHero () {
 }
 
 public function SpawnRandomEnemy () {
-	var newEnemy : GameObject = Instantiate(enemyPrefab, RandomPointOnXZCircle(7.0f), Quaternion.identity) as GameObject;
+	var newEnemy : GameObject = Instantiate(enemyPrefab, RandomPointOnXYCircle(7.0f), Quaternion.identity) as GameObject;
 	var aiComponent : AIFollowAttackComponent = newEnemy.AddComponent(AIFollowAttackComponent);
 	aiComponent.attackTag = heroPrefab.tag;
 	spawnedEnemies++;
 }
 
-private function RandomPointOnXZCircle (radius : float) : Vector3 {
+private function RandomPointOnXYCircle (radius : float) : Vector3 {
 	var spawnPoint : Vector3 = Random.onUnitSphere * radius;
-	spawnPoint.y = 1.0f;
+	spawnPoint.z = 0.0f;
 	return spawnPoint;
 }
