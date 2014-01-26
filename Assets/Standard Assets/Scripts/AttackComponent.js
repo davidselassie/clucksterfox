@@ -5,11 +5,12 @@ public var attackRadius : float = 1.25f;
 public var attackCycleSeconds : float = 0.75f;
 
 private var lastAttackTimeSeconds : float = Mathf.NegativeInfinity;
+private var motorComponent : CharacterMotor;
+private var animator : Animator;
 
-function Update () {
-	if (Input.GetButtonDown("Fire1")) {
-		TryAttack();
-	}
+function Awake () {
+	motorComponent = GetComponent(CharacterMotor);
+	animator = GetComponent(Animator);
 }
 
 public function TryAttack () {
@@ -23,15 +24,18 @@ private function CanAttackNow () : boolean {
 }
 
 private function Attack () {
-	var nearbyColliders : Collider[] = Physics.OverlapSphere(transform.position, attackRadius);
-	for (var collider : Collider in nearbyColliders) {
+	var hits : RaycastHit[] = Physics.RaycastAll(gameObject.transform.position, motorComponent.lastInputMoveDirection, attackRadius);
+	for (var hit : RaycastHit in hits) {
 		// Don't hurt anyone with the same type tag.
-		if (collider.gameObject.tag != gameObject.tag) {
-			var livingComponent : LivingComponent = collider.gameObject.GetComponent(LivingComponent);
+		if (hit.collider.gameObject.tag != gameObject.tag) {
+			var livingComponent : LivingComponent = hit.collider.gameObject.GetComponent(LivingComponent);
 			if (livingComponent) {
 				livingComponent.Hurt(attackStrength);
 			}
 		}
 	}
 	lastAttackTimeSeconds = Time.time;
+
+	// Use your muscles.
+	//gameObject.BroadcastMessage("AttackingNow");
 }

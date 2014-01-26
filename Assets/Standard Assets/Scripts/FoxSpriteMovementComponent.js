@@ -32,3 +32,7 @@ function Update () {
 		animator.SetInteger("State", newState);
 	}
 }
+
+public function AttackingNow () {
+	animator.SetInteger("State", 6);
+}
