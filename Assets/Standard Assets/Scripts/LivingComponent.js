@@ -20,7 +20,10 @@ public function Hurt (damage : float) {
 	health -= damage;
 	Debug.Log(String.Format("Ow. {0} {1}", gameObject, health));
 	if (!Alive()) {
-		if(gameObject.tag == "Chicken") NextLevelParams.chickenIsDead = 1;
+		if(gameObject.tag == "Chicken") {
+			Debug.Log("Chicken is dead!");
+			NextLevelParams.chickenIsDead = 1;
+		}
 		Destroy(gameObject);
 	}
 }

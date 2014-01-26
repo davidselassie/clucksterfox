@@ -3,8 +3,9 @@
 import System.Linq;
 
 public var startingEnemies : int = 1;
-public var totalEnemies : int = 5;
-public var enemiesPerSecond : float = 0.0f;
+public var totalEnemies : float = 5;
+public var enemiesPerSecond : float = 2.0f;
+public var enemiesPerSecond2 : float = 0.25f;
 public var spawnRadius : float = 30.0f;
 public var enemyPrefab : GameObject;
 public var heroPrefab : GameObject;
@@ -25,6 +26,7 @@ private function SpawnAndWaitLoop () : IEnumerator {
 	if (spawnedEnemies < totalEnemies && enemiesPerSecond > 0.0f) {
 		SpawnRandomEnemy();
 		yield WaitForSeconds(1.0f / enemiesPerSecond);
+		enemiesPerSecond += 1.0f / enemiesPerSecond * enemiesPerSecond2;
 		StartCoroutine(SpawnAndWaitLoop());
 	}
 }
