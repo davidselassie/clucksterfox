@@ -9,6 +9,7 @@ private var player : GameObject = null;
 static class NextLevelParams {
 	public var playerControlsTag : String = "Chicken";
 	public var chickenIsDead : int = 0;
+	public var totalEnemies : float = Mathf.Infinity;
 }
 
 function Start () {
@@ -26,10 +27,12 @@ function LateUpdate () {
 		if (playerControlsTag == "Fox") {
 			NextLevelParams.playerControlsTag = "Chicken";	
 			NextLevelParams.chickenIsDead = 0;
+			NextLevelParams.totalEnemies = Mathf.Infinity;
 			Application.LoadLevel("CreditsScene");		
 		} else {
 			NextLevelParams.playerControlsTag = "Fox";	
 			NextLevelParams.chickenIsDead = 0;
+			NextLevelParams.totalEnemies = 100;
 			Application.LoadLevel("FoxTransition");			
 		}
 	}
@@ -40,8 +43,12 @@ function LateUpdate () {
 }
 
 public function LevelOver () {
-	if(NextLevelParams.chickenIsDead) return true;
-	if(spawningComponent.DoneSpawning() && !GameObject.FindGameObjectWithTag(playerControlsTag)) return true;
+	if (NextLevelParams.chickenIsDead) {
+		return true;
+	}
+	if (spawningComponent.DoneSpawning()) {
+		return true;
+	}
 	return false;
 }
 
