@@ -10,7 +10,7 @@ public var enemyPrefab : GameObject;
 public var heroPrefab : GameObject;
 
 private var spawnedEnemies : int = 0;
-static var heroSpawnPoint : Vector3 = new Vector3(0.0f, 1.0f, 0.0f);
+static var heroSpawnPoint : Vector3 = new Vector3(0.0f, 3.0f, 0.0f);
 
 function Start () {
 	SpawnHero();
