@@ -47,3 +47,7 @@ private function RandomPointOnXYCircle (radius : float) : Vector3 {
 	spawnPoint.z = 0.0f;
 	return spawnPoint;
 }
+
+public function DoneSpawning() {
+	return spawnedEnemies >= totalEnemies;
+}
