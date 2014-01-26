@@ -14,6 +14,6 @@ public function Health () : float {
 public function Hurt (damage : float) {
 	health -= damage;
 	if (!Alive()) {
-		Destroy(gameObject);
+		Destroy(gameObject, 2.0f);
 	}
 }
