@@ -20,7 +20,7 @@ function FixedUpdate () {
 		if (Vector3.Distance(transform.position, attackObject.transform.position) <= attackComponent.attackRadius) {
 			attackComponent.TryAttack();
 		}
-		motorComponent.inputMoveDirection = Vector3.Normalize(attackObject.transform.position - transform.position) * motorComponent.movement.maxSidewaysSpeed;
+		motorComponent.inputMoveDirection = Vector3.Normalize(attackObject.transform.position - transform.position) * motorComponent.maxSpeed;
 	} else {
 		motorComponent.inputMoveDirection = Vector3.zero;
 	}

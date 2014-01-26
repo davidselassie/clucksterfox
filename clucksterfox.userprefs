@@ -1,13 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/AttackComponent.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/PlatformInputController.js">
     <Files>
-      <File FileName="Assets/Standard Assets/Scripts/LevelController.js" Line="21" Column="8" />
-      <File FileName="Assets/Standard Assets/Scripts/LivingComponent.js" Line="15" Column="1" />
-      <File FileName="Assets/Standard Assets/Scripts/OverheadCamera.js" Line="11" Column="1" />
-      <File FileName="Assets/Standard Assets/Scripts/PlayerComponent.js" Line="2" Column="1" />
-      <File FileName="Assets/Standard Assets/Scripts/SpawningComponent.js" Line="11" Column="12" />
-      <File FileName="Assets/Standard Assets/Scripts/AttackComponent.js" Line="38" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/LevelController.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/LivingComponent.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/OverheadCamera.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/SpawningComponent.js" Line="13" Column="58" />
+      <File FileName="Assets/Standard Assets/Scripts/AttackComponent.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/CharacterMotor.js" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/PlatformInputController.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -21,21 +21,11 @@ function Update () {
 	if (!livingComponent.Alive()) {
 		newState = 5;
 	}
-	else if (Mathf.Abs(motor.inputMoveDirection.x) < 0.01f) {
-		if (currentState == 3) {
-			newState = 1;
-		}
-		else if (currentState == 4) {
-			newState = 2;
-		} else {
-			newState = currentState;
-		}
+	else if (motor.inputMoveDirection.sqrMagnitude < 0.01f) {
+		newState = 1;
 	}
-	else if (motor.inputMoveDirection.x > 0.0) {
+	else {
 		newState = 3;
-	}
-	else if (motor.inputMoveDirection.x < 0.0) {
-		newState = 4;
 	}
 	
 	if (newState != currentState) {
