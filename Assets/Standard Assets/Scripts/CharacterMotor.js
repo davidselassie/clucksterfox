@@ -4,7 +4,6 @@
 
 public var inputMoveDirection : Vector3 = Vector3.zero;
 public var maxSpeed : float = 5.0f;
-public var acceleration : float = 30.0f;
 
 private var currentVelocity : Vector3 = Vector3.zero;
 private var characterController : CharacterController;
@@ -44,7 +43,7 @@ private function ApplyInputVelocityChange (currentVelocity : Vector3) {
 private function RevertToXYPlane (inputVelocity : Vector3, position : Vector3) {
 	var correctedVelocity : Vector3 = inputVelocity;
 	// Spring returning force to z = 0 plane: F = ma = k x ^ 2
-	correctedVelocity.z = -acceleration * position.z * position.z;
+	correctedVelocity.z = -position.z * position.z * Time.fixedDeltaTime;
 	// Quench Z jitters.
 	if (correctedVelocity.z <= 0.01f) {
 		correctedVelocity.z = 0.0f;
