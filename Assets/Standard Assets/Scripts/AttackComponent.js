@@ -1,8 +1,9 @@
 ﻿#pragma strict
 
 public var attackStrength : float = 5.0f;
-public var attackRadius : float = 1.25f;
+public var attackRadius : float = 2.25f;
 public var attackCycleSeconds : float = 0.75f;
+public var attackSound : AudioClip;
 
 private var lastAttackTimeSeconds : float = Mathf.NegativeInfinity;
 private var motorComponent : CharacterMotor;
@@ -38,4 +39,6 @@ private function Attack () {
 
 	// Use your muscles.
 	//gameObject.BroadcastMessage("AttackingNow");
+	
+	audio.PlayOneShot(attackSound);
 }
