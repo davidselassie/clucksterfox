@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Scripts/AttackComponent.js">
+    <Files>
+      <File FileName="Assets/Standard Assets/Scripts/LevelController.js" Line="21" Column="8" />
+      <File FileName="Assets/Standard Assets/Scripts/LivingComponent.js" Line="15" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/OverheadCamera.js" Line="11" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/PlayerComponent.js" Line="2" Column="1" />
+      <File FileName="Assets/Standard Assets/Scripts/SpawningComponent.js" Line="11" Column="12" />
+      <File FileName="Assets/Standard Assets/Scripts/AttackComponent.js" Line="38" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
