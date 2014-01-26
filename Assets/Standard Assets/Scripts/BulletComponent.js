@@ -32,4 +32,5 @@ function OnTriggerEnter (collider : Collider) {
 		livingEntity.Hurt(damage);
 		Debug.Log("Bullet Damage!");
 	}
+	Destroy(gameObject);
 }
