@@ -4,6 +4,7 @@
 @script RequireComponent (CharacterMotor)
 
 public var attackTag : String;
+public var speedFactor : float = 0.5f;
 
 private var attackComponent : AttackComponent;
 private var motorComponent : CharacterMotor;
@@ -20,7 +21,7 @@ function FixedUpdate () {
 		if (Vector3.Distance(transform.position, attackObject.transform.position) <= attackComponent.attackRadius) {
 			attackComponent.TryAttack();
 		}
-		motorComponent.inputMoveDirection = Vector3.Normalize(attackObject.transform.position - transform.position) * motorComponent.maxSpeed;
+		motorComponent.inputMoveDirection = Vector3.Normalize(attackObject.transform.position - transform.position) * speedFactor;
 	} else {
 		motorComponent.inputMoveDirection = Vector3.zero;
 	}

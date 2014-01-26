@@ -30,13 +30,8 @@ function FixedUpdate () {
 }
 
 private function ApplyInputVelocityChange (currentVelocity : Vector3) {
-	var moveDirection : Vector3 = inputMoveDirection;
-	// If there's not movement being given, slow down.
-	if (moveDirection.sqrMagnitude <= 0.5f) {
-		moveDirection = -currentVelocity;
-	}
 	// Integrate acceleration and input to get position.
-	var inputVelocity : Vector3 = Vector3.Normalize(moveDirection) * maxSpeed;
+	var inputVelocity : Vector3 = inputMoveDirection * maxSpeed;
 	return currentVelocity + inputVelocity;
 }
 
