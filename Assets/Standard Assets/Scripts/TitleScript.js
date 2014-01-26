@@ -1,7 +1,13 @@
 ﻿#pragma strict
 
 var customTexture:GUITexture;
+var nextScene = "TestScene";
+var delayTime : float = 2.0f;
+private var startTime : float;
 
+function Start(){
+	startTime = Time.time;
+}
 
 function OnGUI () {
 		
@@ -15,6 +21,7 @@ function OnGUI () {
 }
 
 function Update () {
+	if(Time.time - startTime < delayTime) return;
 	if(Input.anyKeyDown)
-		Application.LoadLevel ("TestScene");
+		Application.LoadLevel (nextScene);
 }

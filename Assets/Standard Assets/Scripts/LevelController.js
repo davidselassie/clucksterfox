@@ -7,7 +7,8 @@ private var spawningComponent : SpawningComponent;
 private var player : GameObject = null;
 
 static class NextLevelParams {
-	public var playerControlsTag : String = "Fox";
+	public var playerControlsTag : String = "Chicken";
+	public var chickenIsDead : int = 0;
 }
 
 function Start () {
@@ -21,22 +22,27 @@ function Start () {
 
 // After we've updated all of the health, see if we need to link to a new object.
 function LateUpdate () {
-	if (!player) {
-		LinkControlToObjectOfTag(playerControlsTag);
-	}
-
 	if (LevelOver()) {
 		if (playerControlsTag == "Fox") {
-			NextLevelParams.playerControlsTag = "Chicken";
+			NextLevelParams.playerControlsTag = "Chicken";	
+			NextLevelParams.chickenIsDead = 0;
+			Application.LoadLevel("CreditsScene");		
 		} else {
-			NextLevelParams.playerControlsTag = "Fox";
+			NextLevelParams.playerControlsTag = "Fox";	
+			NextLevelParams.chickenIsDead = 0;
+			Application.LoadLevel("FoxTransition");			
 		}
-		Application.LoadLevel("TestScene");
+	}
+	
+	if (!player && playerControlsTag == "Fox") {
+		LinkControlToObjectOfTag(playerControlsTag);
 	}
 }
 
 public function LevelOver () {
-	return spawningComponent.DoneSpawning() && !GameObject.FindGameObjectWithTag(playerControlsTag);
+	if(NextLevelParams.chickenIsDead) return true;
+	if(spawningComponent.DoneSpawning() && !GameObject.FindGameObjectWithTag(playerControlsTag)) return true;
+	return false;
 }
 
 public function LinkControlToObjectOfTag (desiredTag : String) : boolean {

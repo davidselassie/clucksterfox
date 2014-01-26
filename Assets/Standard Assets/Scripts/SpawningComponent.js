@@ -5,7 +5,7 @@ import System.Linq;
 public var startingEnemies : int = 1;
 public var totalEnemies : int = 5;
 public var enemiesPerSecond : float = 0.0f;
-
+public var spawnRadius : float = 30.0f;
 public var enemyPrefab : GameObject;
 public var heroPrefab : GameObject;
 
@@ -36,7 +36,7 @@ public function SpawnHero () {
 }
 
 public function SpawnRandomEnemy () {
-	var newEnemy : GameObject = Instantiate(enemyPrefab, RandomPointOnXYCircle(7.0f), Quaternion.identity) as GameObject;
+	var newEnemy : GameObject = Instantiate(enemyPrefab, RandomPointOnXYCircle(spawnRadius), Quaternion.identity) as GameObject;
 	var aiComponent : AIFollowAttackComponent = newEnemy.AddComponent(AIFollowAttackComponent);
 	aiComponent.attackTag = heroPrefab.tag;
 	spawnedEnemies++;
