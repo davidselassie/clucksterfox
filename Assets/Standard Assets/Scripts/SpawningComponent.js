@@ -5,7 +5,7 @@ import System.Linq;
 public var startingEnemies : int = 1;
 public var totalEnemies : float = 5;
 public var enemiesPerSecond : float = 2.0f;
-public var enemiesPerSecond2 : float = 0.25f;
+public var enemiesPerSecond2 : float = 0.1f;
 public var spawnRadius : float = 30.0f;
 public var enemyPrefab : GameObject;
 public var heroPrefab : GameObject;
@@ -15,6 +15,7 @@ private var spawnedEnemies : int = 0;
 static var heroSpawnPoint : Vector3 = new Vector3(0.0f, 0.0f, 0.0f);
 
 function Start () {
+	totalEnemies = Mathf.Infinity;
 	SpawnHero();
 	for (var i : int in Enumerable.Range(0, startingEnemies)) {
 		SpawnRandomEnemy();

@@ -32,7 +32,7 @@ function LateUpdate () {
 		} else {
 			NextLevelParams.playerControlsTag = "Fox";	
 			NextLevelParams.chickenIsDead = 0;
-			NextLevelParams.totalEnemies = 100;
+			NextLevelParams.totalEnemies = Mathf.Infinity;
 			Application.LoadLevel("FoxTransition");			
 		}
 	}
@@ -46,9 +46,9 @@ public function LevelOver () {
 	if (NextLevelParams.chickenIsDead) {
 		return true;
 	}
-	if (spawningComponent.DoneSpawning()) {
-		return true;
-	}
+	//if (spawningComponent.DoneSpawning()) {
+	//	return true;
+	//}
 	return false;
 }
 
