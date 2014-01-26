@@ -15,7 +15,7 @@ function Awake () {
 // Update is called once per frame
 function Update () {
 	// Get the input vector from keyboard or analog stick
-	var directionVector = new Vector3(-Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+	var directionVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 	
 	// Apply the direction to the CharacterMotor
 	motorComponent.inputMoveDirection = Vector3.Normalize(directionVector);
