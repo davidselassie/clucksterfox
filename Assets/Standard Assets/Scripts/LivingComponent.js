@@ -1,7 +1,12 @@
 ﻿#pragma strict
 
 public var maxHealth : float = 100.0f;
-private var health : float = maxHealth;
+
+private var health : float;
+
+function Start () {
+	health = maxHealth;
+}
 
 public function Alive () : boolean {
 	return health > 0.0f;
@@ -13,6 +18,7 @@ public function Health () : float {
 
 public function Hurt (damage : float) {
 	health -= damage;
+	Debug.Log(String.Format("Ow. {0} {1}", gameObject, health));
 	if (!Alive()) {
 		Destroy(gameObject, 2.0f);
 	}
